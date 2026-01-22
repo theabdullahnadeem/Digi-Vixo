@@ -1,6 +1,7 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CookieConsent from "@/components/layout/CookieConsent";
+import Chatbot from "@/components/layout/Chatbot";
 import SmoothScroller from "@/components/layout/SmoothScroller";
 import JsonLd from "@/components/seo/JsonLd";
 import type { Metadata } from "next";
@@ -16,13 +17,23 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://digivixo.site'),
+  metadataBase: new URL("https://digivixo.site"),
   title: {
-    default: 'Digivixo | Professional IT & Digital Business Solutions',
-    template: '%s | Digivixo'
+    default: "Digivixo | Professional IT & Digital Business Solutions",
+    template: "%s | Digivixo",
   },
-  description: "Digivixo provides professional website development, custom web applications, automation, and AI-driven solutions for growing businesses.",
-  keywords: ["website development", "web applications", "AI solutions", "automation", "IT services", "digital transformation", "Next.js development", "software engineering"],
+  description:
+    "Digivixo provides professional website development, custom web applications, automation, and AI-driven solutions for growing businesses.",
+  keywords: [
+    "website development",
+    "web applications",
+    "AI solutions",
+    "automation",
+    "IT services",
+    "digital transformation",
+    "Next.js development",
+    "software engineering",
+  ],
   authors: [{ name: "Digivixo Team" }],
   creator: "Digivixo",
   publisher: "Digivixo",
@@ -32,27 +43,29 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: 'Digivixo | Professional IT & Digital Business Solutions',
-    description: 'Transform your business with Digivixo\'s professional IT solutions. We specialize in web development, AI integration, and digital automation.',
-    url: 'https://digivixo.site',
-    siteName: 'Digivixo',
-    locale: 'en_US',
-    type: 'website',
+    title: "Digivixo | Professional IT & Digital Business Solutions",
+    description:
+      "Transform your business with Digivixo's professional IT solutions. We specialize in web development, AI integration, and digital automation.",
+    url: "https://digivixo.site",
+    siteName: "Digivixo",
+    locale: "en_US",
+    type: "website",
     images: [
       {
-        url: '/og-image.jpg', // We should ensure this exists or use a generator
+        url: "/og-image.jpg", // We should ensure this exists or use a generator
         width: 1200,
         height: 630,
-        alt: 'Digivixo - Professional IT Solutions',
+        alt: "Digivixo - Professional IT Solutions",
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Digivixo | Professional IT & Digital Business Solutions',
-    description: 'Expert web development and AI solutions for modern businesses.',
-    creator: '@digivixo',
-    images: ['/twitter-image.jpg'], // We should ensure this exists
+    card: "summary_large_image",
+    title: "Digivixo | Professional IT & Digital Business Solutions",
+    description:
+      "Expert web development and AI solutions for modern businesses.",
+    creator: "@digivixo",
+    images: ["/twitter-image.jpg"], // We should ensure this exists
   },
   robots: {
     index: true,
@@ -60,24 +73,24 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   alternates: {
-    canonical: '/',
+    canonical: "/",
   },
   icons: {
-    icon: '/icon.png',
-    apple: '/apple-icon.png',
+    icon: "/icon.png",
+    apple: "/apple-icon.png",
   },
-  manifest: '/manifest.json',
+  manifest: "/manifest.json",
 };
 
 export const viewport = {
-  themeColor: 'black',
-  width: 'device-width',
+  themeColor: "black",
+  width: "device-width",
   initialScale: 1,
 };
 
@@ -88,9 +101,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark" style={{ colorScheme: "dark" }}>
-      <body
-        className={`${inter.variable} antialiased font-sans`}
-      >
+      <body className={`${inter.variable} antialiased font-sans`}>
         <Script
           src="/1mnw/gtag/js?id=G-JYGJRBSK5L"
           strategy="afterInteractive"
@@ -109,11 +120,10 @@ export default function RootLayout({
         <SmoothScroller>
           <JsonLd />
           <Header />
-          <main className="min-h-screen pt-20">
-            {children}
-          </main>
+          <main className="min-h-screen pt-20">{children}</main>
           <Footer />
           <CookieConsent />
+          <Chatbot />
         </SmoothScroller>
       </body>
     </html>
