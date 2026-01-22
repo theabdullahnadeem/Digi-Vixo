@@ -303,6 +303,7 @@ GUIDELINES:
           margin-bottom: 20px;
           display: flex;
           gap: 10px;
+          color:blue;
           animation: fadeIn 0.4s ease;
         }
 
@@ -319,6 +320,7 @@ GUIDELINES:
 
         .dg-message.user {
           flex-direction: row-reverse;
+          color:blue;
         }
 
         .dg-message-avatar {
@@ -335,12 +337,11 @@ GUIDELINES:
 
         .dg-message.bot .dg-message-avatar {
           background: linear-gradient(135deg, #0066ff 0%, #0052cc 100%);
-          color: white;
         }
 
         .dg-message.user .dg-message-avatar {
           background: #e5e7eb;
-          color: #374151;
+          color: blue;
         }
 
         .dg-message-content {
@@ -449,6 +450,7 @@ GUIDELINES:
           outline: none;
           font-family: inherit;
           transition: all 0.3s ease;
+          color:blue;
         }
 
         .dg-input:focus {
