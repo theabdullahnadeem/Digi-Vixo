@@ -6,12 +6,9 @@ import Chatbot from "@/components/layout/Chatbot";
 import SmoothScroller from "@/components/layout/SmoothScroller";
 import JsonLd from "@/components/seo/JsonLd";
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
-import Head from "next/head";
-import { Html, Main } from "next/document";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -103,32 +100,32 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <Html lang="en" className="dark" style={{ colorScheme: "dark" }}>
-      <Head>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-JYGJRBSK5L"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+   <html lang="en" className="dark" style={{ colorScheme: "dark" }}>
+  <head>
+    <Script
+      src="https://www.googletagmanager.com/gtag/js?id=G-JYGJRBSK5L"
+      strategy="afterInteractive"
+    />
+    <Script id="google-analytics" strategy="afterInteractive">
+      {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-            gtag('config', 'G-JYGJRBSK5L');
-          `}
-        </Script>
-      </Head>
-      <body className={`${inter.variable} antialiased font-sans`}>
-        <SmoothScroller>
-          <JsonLd />
-          <Header />
-          <Main className="min-h-screen pt-20">{children}</Main>
-          <Footer />
-          <CookieConsent />
-          <Chatbot />
-        </SmoothScroller>
-      </body>
-    </Html>
+        gtag('config', 'G-JYGJRBSK5L');
+      `}
+    </Script>
+  </head>
+  <body className={`${inter.variable} antialiased font-sans`}>
+    <SmoothScroller>
+      <JsonLd />
+      <Header />
+      <main className="min-h-screen pt-20">{children}</main>
+      <Footer />
+      <CookieConsent />
+      <Chatbot />
+    </SmoothScroller>
+  </body>
+</html>
   );
 }
