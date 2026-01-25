@@ -10,6 +10,8 @@ import Link from "next/link";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
+import Head from "next/head";
+import { Html, Main } from "next/document";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -101,8 +103,8 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark" style={{ colorScheme: "dark" }}>
-      <body className={`${inter.variable} antialiased font-sans`}>
+    <Html lang="en" className="dark" style={{ colorScheme: "dark" }}>
+      <Head>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-JYGJRBSK5L"
           strategy="afterInteractive"
@@ -116,15 +118,17 @@ export default function RootLayout({
             gtag('config', 'G-JYGJRBSK5L');
           `}
         </Script>
+      </Head>
+      <body className={`${inter.variable} antialiased font-sans`}>
         <SmoothScroller>
           <JsonLd />
           <Header />
-          <main className="min-h-screen pt-20">{children}</main>
+          <Main className="min-h-screen pt-20">{children}</Main>
           <Footer />
           <CookieConsent />
           <Chatbot />
         </SmoothScroller>
       </body>
-    </html>
+    </Html>
   );
 }
