@@ -100,32 +100,34 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-   <html lang="en" className="dark" style={{ colorScheme: "dark" }}>
-  <head>
-    <Script
-      src="https://www.googletagmanager.com/gtag/js?id=G-JYGJRBSK5L"
-      strategy="afterInteractive"
-    />
-    <Script id="google-analytics" strategy="afterInteractive">
-      {`
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-JYGJRBSK5L');
-      `}
-    </Script>
-  </head>
-  <body className={`${inter.variable} antialiased font-sans`}>
-    <SmoothScroller>
-      <JsonLd />
-      <Header />
-      <main className="min-h-screen pt-20">{children}</main>
-      <Footer />
-      <CookieConsent />
-      <Chatbot />
-    </SmoothScroller>
-  </body>
-</html>
+    <html lang="en" className="dark" style={{ colorScheme: "dark" }}>
+      <head>
+        {/* Classic Google Analytics Snippet */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-JYGJRBSK5L"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-JYGJRBSK5L');
+        `,
+          }}
+        />
+      </head>
+      <body className={`${inter.variable} antialiased font-sans`}>
+        <SmoothScroller>
+          <JsonLd />
+          <Header />
+          <main className="min-h-screen pt-20">{children}</main>
+          <Footer />
+          <CookieConsent />
+          <Chatbot />
+        </SmoothScroller>
+      </body>
+    </html>
   );
 }
