@@ -103,19 +103,17 @@ export default function RootLayout({
     <html lang="en" className="dark" style={{ colorScheme: "dark" }}>
       <body className={`${inter.variable} antialiased font-sans`}>
         <Script
-          src="/1mnw/gtag/js?id=G-JYGJRBSK5L"
+          src="https://www.googletagmanager.com/gtag/js?id=G-JYGJRBSK5L"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-    gtag('config', 'G-JYGJRBSK5L', {
-      'transport_url': '/1mnw'
-    });
-  `}
+            gtag('config', 'G-JYGJRBSK5L');
+          `}
         </Script>
         <SmoothScroller>
           <JsonLd />
