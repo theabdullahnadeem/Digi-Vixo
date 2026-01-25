@@ -1,3 +1,4 @@
+import React from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CookieConsent from "@/components/layout/CookieConsent";
@@ -6,9 +7,9 @@ import SmoothScroller from "@/components/layout/SmoothScroller";
 import JsonLd from "@/components/seo/JsonLd";
 import type { Metadata } from "next";
 import Link from "next/link";
-import Script from "next/script";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -52,7 +53,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.jpg", // We should ensure this exists or use a generator
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Digivixo - Professional IT Solutions",
@@ -65,7 +66,7 @@ export const metadata: Metadata = {
     description:
       "Expert web development and AI solutions for modern businesses.",
     creator: "@digivixo",
-    images: ["/twitter-image.jpg"], // We should ensure this exists
+    images: ["/twitter-image.jpg"],
   },
   robots: {
     index: true,
@@ -101,20 +102,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark" style={{ colorScheme: "dark" }}>
-      <body className={`${inter.variable} antialiased font-sans`}>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-JYGJRBSK5L"
+      <head>
+       <Script
           strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-JYGJRBSK5L"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-JYGJRBSK5L');
-          `}
-        </Script>
+        <Script
+          id="gtag-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-JYGJRBSK5L');
+            `,
+          }}
+        />
+      </head>
+      <body className={`${inter.variable} antialiased font-sans`}>
         <SmoothScroller>
           <JsonLd />
           <Header />
