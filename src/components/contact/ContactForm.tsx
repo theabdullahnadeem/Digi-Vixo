@@ -1,52 +1,66 @@
 "use client";
 
 import { useState } from "react";
-import { Send, Loader2 } from "lucide-react";
+import { Send, Loader2, CheckCircle } from "lucide-react";
 
 export default function ContactForm() {
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        company: "",
-        phone: "",
-        service: "",
-        budget: "",
-        message: "",
-    });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitted, setSubmitted] = useState(false);
+    const [error, setError] = useState(false);
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
-
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsSubmitting(true);
-        
-        // Simulate form submission - replace with actual API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        
-        setIsSubmitting(false);
-        setSubmitted(true);
+        setError(false);
+
+        const formData = new FormData(e.currentTarget);
+
+        try {
+            const response = await fetch("https://formsubmit.co/ajax/abdullahnadeem2580@gmail.com", {
+                method: "POST",
+                body: formData,
+                headers: {
+                    Accept: "application/json",
+                },
+            });
+
+            if (response.ok) {
+                setSubmitted(true);
+            } else {
+                setError(true);
+            }
+        } catch {
+            setError(true);
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     if (submitted) {
         return (
             <div className="flex flex-col items-center justify-center h-full space-y-6 min-h-[400px] text-center">
-                <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center">
-                    <Send className="w-8 h-8 text-green-500" />
+                <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center animate-bounce">
+                    <CheckCircle className="w-10 h-10 text-green-500" />
                 </div>
-                <h3 className="text-2xl font-bold">Message Sent!</h3>
-                <p className="text-neutral-400">
-                    Thank you for reaching out. We&apos;ll get back to you within 24 hours.
+                <h3 className="text-3xl font-bold text-white">Message Sent!</h3>
+                <p className="text-neutral-400 max-w-md">
+                    Thank you for reaching out. Our team will get back to you within 24 hours.
                 </p>
+                <button
+                    onClick={() => setSubmitted(false)}
+                    className="text-accent hover:underline text-sm"
+                >
+                    Send another message
+                </button>
             </div>
         );
     }
 
     return (
-        <form action="https://formsubmit.co/abdullahnadeem2580@gmail.com" method="POST" onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-6">
+            {/* FormSubmit configuration */}
+            <input type="hidden" name="_subject" value="New Contact Form Submission - Digivixo" />
+            
             {/* Name & Email Row */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
@@ -58,8 +72,6 @@ export default function ContactForm() {
                         id="name"
                         name="name"
                         required
-                        value={formData.name}
-                        onChange={handleChange}
                         placeholder="John Doe"
                         className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl focus:outline-none focus:border-accent transition-colors text-white placeholder:text-neutral-500"
                     />
@@ -73,8 +85,6 @@ export default function ContactForm() {
                         id="email"
                         name="email"
                         required
-                        value={formData.email}
-                        onChange={handleChange}
                         placeholder="john@company.com"
                         className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl focus:outline-none focus:border-accent transition-colors text-white placeholder:text-neutral-500"
                     />
@@ -85,30 +95,26 @@ export default function ContactForm() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                     <label htmlFor="company" className="text-sm font-medium text-neutral-300">
-                        Company Name
+                        Company Name <span className="text-red-500">*</span>
                     </label>
                     <input
                         type="text"
                         id="company"
                         name="company"
                         required
-                        value={formData.company}
-                        onChange={handleChange}
                         placeholder="Acme Inc."
                         className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl focus:outline-none focus:border-accent transition-colors text-white placeholder:text-neutral-500"
                     />
                 </div>
                 <div className="space-y-2">
                     <label htmlFor="phone" className="text-sm font-medium text-neutral-300">
-                        Phone Number
+                        Phone Number <span className="text-red-500">*</span>
                     </label>
                     <input
                         type="tel"
                         id="phone"
                         name="phone"
                         required
-                        value={formData.phone}
-                        onChange={handleChange}
                         placeholder="+1 (555) 000-0000"
                         className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl focus:outline-none focus:border-accent transition-colors text-white placeholder:text-neutral-500"
                     />
@@ -125,38 +131,34 @@ export default function ContactForm() {
                         id="service"
                         name="service"
                         required
-                        value={formData.service}
-                        onChange={handleChange}
                         className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl focus:outline-none focus:border-accent transition-colors text-white"
                     >
                         <option value="">Select a service</option>
-                        <option value="web-development">Web Development</option>
-                        <option value="saas-development">SaaS Development</option>
-                        <option value="ai-automation">AI & Automation</option>
-                        <option value="ui-ux-design">UI/UX Design</option>
-                        <option value="shopify-apps">Shopify Apps</option>
-                        <option value="consulting">Technical Consulting</option>
-                        <option value="other">Other</option>
+                        <option value="Web Development">Web Development</option>
+                        <option value="SaaS Development">SaaS Development</option>
+                        <option value="AI & Automation">AI & Automation</option>
+                        <option value="UI/UX Design">UI/UX Design</option>
+                        <option value="Shopify Apps">Shopify Apps</option>
+                        <option value="Technical Consulting">Technical Consulting</option>
+                        <option value="Other">Other</option>
                     </select>
                 </div>
                 <div className="space-y-2">
                     <label htmlFor="budget" className="text-sm font-medium text-neutral-300">
-                        Project Budget
+                        Project Budget <span className="text-red-500">*</span>
                     </label>
                     <select
                         id="budget"
                         name="budget"
                         required
-                        value={formData.budget}
-                        onChange={handleChange}
                         className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl focus:outline-none focus:border-accent transition-colors text-white"
                     >
                         <option value="">Select budget range</option>
-                        <option value="under-5k">Under $5,000</option>
-                        <option value="5k-10k">$5,000 - $10,000</option>
-                        <option value="10k-25k">$10,000 - $25,000</option>
-                        <option value="25k-50k">$25,000 - $50,000</option>
-                        <option value="50k+">$50,000+</option>
+                        <option value="Under $5,000">Under $5,000</option>
+                        <option value="$5,000 - $10,000">$5,000 - $10,000</option>
+                        <option value="$10,000 - $25,000">$10,000 - $25,000</option>
+                        <option value="$25,000 - $50,000">$25,000 - $50,000</option>
+                        <option value="$50,000+">$50,000+</option>
                     </select>
                 </div>
             </div>
@@ -171,12 +173,17 @@ export default function ContactForm() {
                     name="message"
                     required
                     rows={5}
-                    value={formData.message}
-                    onChange={handleChange}
                     placeholder="Tell us about your project, goals, and timeline..."
                     className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl focus:outline-none focus:border-accent transition-colors text-white placeholder:text-neutral-500 resize-none"
                 />
             </div>
+
+            {/* Error Message */}
+            {error && (
+                <div className="bg-red-500/10 border border-red-500/30 rounded-xl px-4 py-3 text-red-400 text-sm">
+                    Something went wrong. Please try again or email us directly.
+                </div>
+            )}
 
             {/* Submit Button */}
             <button

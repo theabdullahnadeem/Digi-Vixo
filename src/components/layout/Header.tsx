@@ -22,17 +22,18 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/10 text-white py-4 px-6 md:px-8 flex items-center justify-between">
+    <header className="fixed top-0 left-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/10 text-white py-4 px-6 md:px-8 flex items-center justify-between mb-3 md:mb-1">
       <Link
         href="/"
-        className="relative h-10 w-32 md:h-12 md:w-48 transition-opacity hover:opacity-90"
+        className="relative transition-opacity hover:opacity-90"
+        style={{width: '200px', height: '50px'}}
       >
         <Image
           src="/new.png"
           alt="DIGIVIXO"
-          fill
           className="object-contain object-left"
           priority
+          fill
         />
       </Link>
 
