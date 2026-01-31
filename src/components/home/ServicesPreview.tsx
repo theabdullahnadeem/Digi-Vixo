@@ -40,7 +40,7 @@ export default function ServicesPreview() {
         {
             id: "web-apps",
             title: "Web Applications",
-            description: "Advanced SaaS solutions tailored to your business processes.",
+            description: "Budget SaaS app development for small teams and custom enterprise solutions.",
             icon: <Layout className="w-6 h-6" />,
             link: "/services#web-apps",
             className: "md:col-span-1 lg:col-span-1",
@@ -49,7 +49,7 @@ export default function ServicesPreview() {
         {
             id: "ai",
             title: "Automation & AI",
-            description: "Intelligent workflows to optimize operations.",
+            description: "Leading AI automation agency USA providing intelligent workflows and custom bots.",
             icon: <Cpu className="w-6 h-6" />,
             link: "/services#ai",
             className: "md:col-span-1 lg:col-span-1",
@@ -58,7 +58,7 @@ export default function ServicesPreview() {
         {
             id: "ui-ux",
             title: "UI/UX & Design",
-            description: "Premium brand identity and user experience design.",
+            description: "Premium SaaS UI UX design for mobile web apps and digital brand identity.",
             icon: <Palette className="w-6 h-6" />,
             link: "/services#design",
             className: "md:col-span-2 lg:col-span-1",
@@ -67,7 +67,7 @@ export default function ServicesPreview() {
         {
             id: "shopify",
             title: "Shopify Development",
-            description: "High-growth e-commerce platform engineering.",
+            description: "Shopify app UI UX development agency specializing in high-growth stores.",
             icon: <ShoppingBag className="w-6 h-6" />,
             link: "/services#shopify",
             className: "md:col-span-1 lg:col-span-1",
@@ -99,7 +99,7 @@ export default function ServicesPreview() {
                 <div className="flex flex-col md:flex-row justify-between items-end gap-8">
                     <div className="space-y-4 max-w-2xl">
                         <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
-                            Engineered for <span className="text-primary">Growth.</span>
+                            Scalable <span className="text-primary">SaaS & AI Services.</span>
                         </h2>
                         <p className="text-neutral-400 text-lg leading-relaxed max-w-xl">
                             A comprehensive suite of digital services designed to build, scale, and automate your business infrastructure.
@@ -127,7 +127,7 @@ export default function ServicesPreview() {
                                     style={{ backgroundImage: `url('${service.bgImage}')` }}
                                 />
                             )}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
+                            <div className="absolute inset-0 bg-linear-to-t from-black via-black/80 to-transparent" />
 
                             <div className="relative z-10 flex flex-col h-full justify-between">
                                 <div className="self-start p-3 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 text-white mb-auto">

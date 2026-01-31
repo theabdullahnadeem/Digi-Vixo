@@ -9,10 +9,16 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
     return (
-        <main className="pt-20 pb-24 bg-black min-h-screen">
-            <div className="py-24 text-center space-y-6 px-6">
-                <h1 className="text-5xl md:text-8xl font-bold tracking-tighter">Get in Touch</h1>
-                <p className="text-xl text-neutral-500 max-w-2xl mx-auto">
+        <main className="pb-24 bg-black min-h-screen">
+            <div className="relative py-24 text-center space-y-6 px-6 overflow-hidden">
+                {/* Background Image */}
+                <div
+                    className="absolute inset-0 bg-cover bg-center"
+                    style={{ backgroundImage: "url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1920&q=80')" }}
+                />
+                <div className="absolute inset-0 bg-linear-to-b from-black/80 to-black" />
+                <h1 className="relative z-10 text-5xl md:text-8xl font-bold tracking-tighter">Get in Touch</h1>
+                <p className="relative z-10 text-xl text-neutral-500 max-w-2xl mx-auto">
                     We are ready to build and scale your digital future. Let&apos;s discuss your next project.
                 </p>
             </div>
@@ -80,7 +86,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Form Side */}
-                <div className="flex-[1.5] bg-neutral-900 rounded-3xl p-8 md:p-12 border border-neutral-800 shadow-xl shadow-none">
+                <div className="flex-[1.5] bg-neutral-900 rounded-3xl p-8 md:p-12 border border-neutral-800 shadow-xl">
                     <h2 className="text-3xl font-bold mb-8">Send a Message</h2>
                     <ContactForm />
                 </div>

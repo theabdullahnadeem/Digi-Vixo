@@ -47,8 +47,14 @@ export default function ImpactMetrics() {
     ];
 
     return (
-        <section ref={containerRef} className="py-32 px-6 bg-background text-foreground border-y border-neutral-800">
-            <div className="max-w-7xl mx-auto">
+        <section ref={containerRef} className="relative py-32 px-6 bg-background text-foreground border-y border-neutral-800 overflow-hidden">
+            {/* Background Image */}
+            <div 
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80')" }}
+            />
+            <div className="absolute inset-0 bg-linear-to-b from-background via-background/90 to-background" />
+            <div className="max-w-7xl mx-auto relative z-10">
                 <div className="text-center mb-24 space-y-4">
                     <h2 className="text-sm font-bold uppercase tracking-widest text-accent">Our Impact</h2>
                     <h3 className="text-5xl md:text-7xl font-bold tracking-tighter">Scale at Speed.</h3>

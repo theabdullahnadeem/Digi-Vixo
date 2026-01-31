@@ -11,8 +11,8 @@ import AiProductPreview from "@/components/home/AiProductPreview";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Digivixo | Enterprise Web Development & AI Solutions",
-  description: "Scale your business with Digivixo's expert web development, custom software, and AI automation services. We build high-performance digital solutions.",
+  title: "Digivixo | Affordable Custom SaaS Development & AI Automation Agency",
+  description: "Scale your startup with Digivixo's affordable custom SaaS development, AI automation, and premium UI UX design. Expert digital solutions for modern businesses.",
   alternates: {
     canonical: 'https://digivixo.site',
   }

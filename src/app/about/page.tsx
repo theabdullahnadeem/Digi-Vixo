@@ -14,7 +14,7 @@ export const metadata = {
 
 export default function AboutPage() {
     return (
-        <main className="flex flex-col pt-20">
+        <main className="flex flex-col">
             <BrandStory />
             <MissionVision />
             <CorporateGovernance />

@@ -20,10 +20,15 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
     return (
-        <main className="pt-20">
-            <div className="py-24 px-6 text-center space-y-6 bg-gradient-to-b from-neutral-900 to-black">
-                <h1 className="text-5xl md:text-7xl font-bold tracking-tighter">Your Strategic Digital Partner</h1>
-                <p className="text-xl text-neutral-500 max-w-2xl mx-auto">
+        <main>
+            <div className="relative py-24 px-6 text-center space-y-6 bg-linear-to-b from-neutral-900 to-black overflow-hidden">
+                {/* Background Image */}
+                <div
+                    className="absolute inset-0 bg-cover bg-center opacity-15"
+                    style={{ backgroundImage: "url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1920&q=80')" }}
+                />
+                <h1 className="relative z-10 text-5xl md:text-7xl font-bold tracking-tighter">Your Strategic Digital Partner</h1>
+                <p className="relative z-10 text-xl text-neutral-500 max-w-2xl mx-auto">
                     Professional IT and E-commerce pillars. Scalable business solutions. One commitment to technical excellence.
                 </p>
             </div>

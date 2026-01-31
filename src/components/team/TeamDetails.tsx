@@ -1,12 +1,18 @@
 "use client";
 
 import { User, Linkedin, Twitter, Mail, Github, Instagram } from "lucide-react";
+import Script from "next/script";
 import Image from "next/image";
 
 export default function TeamDetails() {
     return (
-        <section className="py-24 px-6 bg-neutral-950 text-white">
-            <div className="max-w-6xl mx-auto space-y-32">
+        <section className="relative py-24 px-6 bg-neutral-950 text-white overflow-hidden">
+            {/* Background Image */}
+            <div 
+                className="absolute inset-0 bg-cover bg-center opacity-10"
+                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1920&q=80')" }}
+            />
+            <div className="max-w-6xl mx-auto space-y-32 relative z-10">
                 {/* Abdullah Profile */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
                     <div className="space-y-8">
@@ -14,7 +20,7 @@ export default function TeamDetails() {
                             <Image src="/abdullah.jpeg" alt="Abdullah" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-8">
                                 <div className="flex gap-4 text-white">
-                                    <a href="https://www.linkedin.com/in/abdullah-nadeem-319560285" className="hover:text-neutral-300 transition-colors"><Linkedin /></a>
+                                    <a href="https://www.linkedin.com/in/abdullah-nadeem-ceo-digivixo/" className="hover:text-neutral-300 transition-colors"><Linkedin /></a>
                                     <a href="https://github.com/ab9898998989898" className="hover:text-neutral-300 transition-colors"><Github /></a>
                                     <a href="mailto:abdullahnadeem2580@gmail.com" className="hover:text-neutral-300 transition-colors"><Mail /></a>
                                 </div>
@@ -117,6 +123,7 @@ export default function TeamDetails() {
                     </div>
                 </div>
             </div>
+            <Script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript" />
         </section>
     );
 }

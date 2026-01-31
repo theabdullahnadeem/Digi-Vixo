@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { cn } from "@/lib/utils";
@@ -41,21 +42,29 @@ export default function Hero() {
 
     return (
         <section ref={containerRef} className="relative min-h-[95vh] flex flex-col justify-center items-center text-center px-6 overflow-hidden">
-            {/* Background with premium glow effects */}
-            <div className="absolute inset-0 -z-10 bg-black">
-                <div className="absolute top-[-20%] left-[-10%] w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-purple-500/10 blur-[120px] rounded-full mix-blend-screen animate-pulse" />
-                <div className="absolute bottom-[-20%] right-[-10%] w-[250px] h-[250px] md:w-[500px] md:h-[500px] bg-blue-500/10 blur-[100px] rounded-full mix-blend-screen animate-pulse delay-1000" />
+            {/* Professional Background Image */}
+            <div className="absolute inset-0 z-0">
+                <Image
+                    src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80"
+                    alt="Digital technology background"
+                    fill
+                    sizes="100vw"
+                    className="object-cover"
+                    priority
+                />
+                {/* Dark overlay for text readability */}
+                <div className="absolute inset-0 bg-black/60" />
             </div>
 
-            <div className="max-w-5xl mx-auto space-y-10 z-10">
+            <div className="max-w-5xl mx-auto space-y-10 z-[2] relative">
                 <div className="overflow-hidden">
-                    <h1 ref={titleRef} className="text-5xl md:text-7xl lg:text-9xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-neutral-400 leading-[1.1] pb-4">
-                        Professional IT & <br />Digital Solutions.
+                    <h1 ref={titleRef} className="text-5xl md:text-7xl lg:text-9xl font-bold tracking-tighter text-transparent bg-clip-text bg-linear-to-b from-white to-neutral-400 leading-[1.1] pb-4">
+                        Affordable Custom <br />Digital Services.
                     </h1>
                 </div>
 
                 <p ref={subtitleRef} className="text-xl md:text-2xl text-neutral-400 max-w-3xl mx-auto leading-relaxed opacity-0">
-                    Digivixo delivers high-performance website development, custom web applications, and intelligent automation services to help businesses scale and succeed in the digital age.
+                    Digivixo is a leading AI automation agency delivering high-performance SaaS solutions and custom web applications to help startups scale.
                 </p>
 
                 <div ref={ctaRef} className="flex flex-col md:flex-row gap-6 justify-center items-center opacity-0 pt-4 mb-2">
@@ -71,7 +80,7 @@ export default function Hero() {
             {/* Scroll Indicator */}
             <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 animate-bounce">
                 <span className="text-xs uppercase tracking-widest">Scroll</span>
-                <div className="w-[1px] h-12 bg-gradient-to-b from-white to-transparent" />
+                <div className="w-px h-12 bg-linear-to-b from-white to-transparent" />
             </div>
         </section>
     );

@@ -34,12 +34,18 @@ export default function BlogPageHero({ title, subtitle }: BlogPageHeroProps) {
     return (
         <section
             ref={containerRef}
-            className="py-24 px-6 text-center space-y-6 bg-gradient-to-b from-neutral-900 to-black"
+            className="relative py-24 px-6 text-center space-y-6 bg-linear-to-b from-neutral-900 to-black overflow-hidden"
         >
-            <h1 className="blog-hero-title text-5xl md:text-7xl font-bold tracking-tighter">
+            {/* Background Image */}
+            <div 
+                className="absolute inset-0 bg-cover bg-center opacity-15"
+                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1920&q=80')" }}
+            />
+            <div className="absolute inset-0 bg-linear-to-b from-neutral-900/80 to-black" />
+            <h1 className="blog-hero-title relative z-10 text-5xl md:text-7xl font-bold tracking-tighter">
                 {title}
             </h1>
-            <p className="blog-hero-subtitle text-xl text-neutral-500 max-w-2xl mx-auto">
+            <p className="blog-hero-subtitle relative z-10 text-xl text-neutral-500 max-w-2xl mx-auto">
                 {subtitle}
             </p>
         </section>

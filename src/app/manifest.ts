@@ -2,9 +2,9 @@ import { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
     return {
-        name: 'Digivixo - Professional IT Solutions',
+        name: 'Digivixo | Affordable Custom SaaS Development & AI Automation Agency',
         short_name: 'Digivixo',
-        description: 'Professional website development, custom web applications, automation, and AI-driven solutions.',
+        description: 'Affordable custom SaaS development for startups USA. AI automation agency offering scalable backend development, Shopify app UI UX, and low-competition marketing solutions.',
         start_url: '/',
         display: 'standalone',
         background_color: '#000000',

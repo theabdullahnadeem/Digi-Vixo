@@ -24,8 +24,16 @@ export default function BrandStory() {
     }, []);
 
     return (
-        <section ref={containerRef} className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
-            <div className="space-y-12">
+        <section ref={containerRef} className="relative py-24 px-6 md:px-12 overflow-hidden">
+            {/* Background Image - Full Width */}
+            <div
+                className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80')" }}
+            />
+            {/* Dark overlay for readability */}
+            <div className="absolute inset-0 bg-black/70" />
+            {/* Content - Centered with max-width */}
+            <div className="relative z-10 max-w-7xl mx-auto space-y-12">
                 <h1 className="story-text text-5xl md:text-7xl font-bold tracking-tighter">
                     We are <span className="text-accent">DIGIVIXO.</span>
                 </h1>

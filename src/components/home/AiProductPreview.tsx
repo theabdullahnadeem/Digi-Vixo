@@ -60,7 +60,7 @@ export default function AiProductPreview() {
     ];
 
     return (
-        <section ref={containerRef} className="py-32 px-6 bg-gradient-to-b from-black to-neutral-900 relative overflow-hidden">
+        <section ref={containerRef} className="py-32 px-6 bg-linear-to-b from-black to-neutral-900 relative overflow-hidden">
             {/* Abstract Background Shapes */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-900/10 rounded-full blur-[120px] pointer-events-none" />
@@ -76,7 +76,7 @@ export default function AiProductPreview() {
 
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white">
                         Analyze. Automate. <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">Accelerate.</span>
+                        <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-blue-400">Accelerate.</span>
                     </h2>
 
                     <p className="text-lg text-neutral-400 leading-relaxed max-w-xl">
@@ -106,45 +106,30 @@ export default function AiProductPreview() {
                     </div>
                 </div>
 
-                {/* Product Preview/Glassmorphism Card */}
+                {/* Product Preview / Professional Image Card */}
                 <div className="flex-1 w-full relative perspective-1000">
-                    <div ref={cardRef} className="relative z-10 w-full aspect-square lg:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-neutral-900/50 backdrop-blur-xl">
-                        {/* Mock UI Header */}
-                        <div className="absolute top-0 left-0 right-0 h-10 bg-white/5 border-b border-white/5 flex items-center px-4 gap-2">
-                            <div className="w-3 h-3 rounded-full bg-red-500/50" />
-                            <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
-                            <div className="w-3 h-3 rounded-full bg-green-500/50" />
-                        </div>
-
-                        {/* Mock Content */}
-                        <div className="p-8 pt-16 h-full flex flex-col gap-6">
-                            <div className="flex gap-4">
-                                <div className="w-1/3 h-32 rounded-xl bg-white/5 animate-pulse" />
-                                <div className="w-2/3 h-32 rounded-xl bg-white/5 animate-pulse delay-75" />
-                            </div>
-                            <div className="flex-1 rounded-xl bg-white/5 p-6 border border-white/5">
-                                <div className="h-4 w-1/4 bg-white/10 rounded mb-4" />
-                                <div className="space-y-3">
-                                    <div className="h-2 w-3/4 bg-white/5 rounded" />
-                                    <div className="h-2 w-full bg-white/5 rounded" />
-                                    <div className="h-2 w-5/6 bg-white/5 rounded" />
+                    <div ref={cardRef} className="relative z-10 w-full aspect-square lg:aspect-4/3 rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+                        {/* Professional AI-themed Image */}
+                        <Image 
+                            src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80" 
+                            alt="AI neural network visualization representing intelligent automation" 
+                            fill 
+                            className="object-cover"
+                        />
+                        <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent" />
+                        
+                        {/* Floating Stats Overlay */}
+                        <div className="absolute bottom-8 left-8 right-8 bg-white/10 backdrop-blur-md p-6 rounded-xl border border-white/20">
+                            <div className="flex justify-between items-center">
+                                <div>
+                                    <p className="text-sm font-medium text-white/70">Efficiency Boost</p>
+                                    <p className="text-3xl font-bold text-white">+45%</p>
                                 </div>
-                                {/* Floating Elements */}
-                                <div className="mt-8 flex gap-4">
-                                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                                        <Zap className="w-6 h-6 text-primary" />
-                                    </div>
-                                    <div className="flex-1 flex items-center">
-                                        <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden">
-                                            <div className="h-full w-2/3 bg-primary rounded-full" />
-                                        </div>
-                                    </div>
+                                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                                    <Zap className="w-6 h-6 text-primary" />
                                 </div>
                             </div>
                         </div>
-
-                        {/* overlay gradient */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
                     </div>
 
                     {/* Decorative Elements behind card */}

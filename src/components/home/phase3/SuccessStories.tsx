@@ -69,8 +69,13 @@ export default function SuccessStories() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {stories.map((story, i) => (
-                    <div key={i} className="story-card p-10 rounded-3xl bg-neutral-900/50 border border-neutral-800 hover:border-accent/50 transition-colors group flex flex-col justify-between h-full">
-                        <div className="space-y-8">
+                    <div key={i} className="story-card relative p-10 rounded-3xl bg-neutral-900/50 border border-neutral-800 hover:border-accent/50 transition-colors group flex flex-col justify-between h-full overflow-hidden">
+                        {/* Background Image */}
+                        <div 
+                            className="absolute inset-0 bg-cover bg-center opacity-10 group-hover:opacity-15 transition-opacity"
+                            style={{ backgroundImage: i === 0 ? "url('https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80')" : i === 1 ? "url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80')" : "url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80')" }}
+                        />
+                        <div className="relative z-10 space-y-8">
                             <div className="flex gap-1">
                                 {[1, 2, 3, 4, 5].map(s => <Star key={s} className="w-5 h-5 fill-gold text-gold" />)}
                             </div>
@@ -79,7 +84,7 @@ export default function SuccessStories() {
                             </blockquote>
                         </div>
 
-                        <div className="mt-12 pt-8 border-t border-neutral-800 flex justify-between items-end">
+                        <div className="relative z-10 mt-12 pt-8 border-t border-neutral-800 flex justify-between items-end">
                             <div>
                                 <div className="text-3xl font-bold text-foreground mb-1">{story.metric}</div>
                                 <div className="text-sm text-neutral-500 uppercase tracking-wide">{story.timeframe}</div>
