@@ -40,7 +40,7 @@ export default function AIDeepDive() {
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
                 <div className="left-content-s space-y-8">
                     <h3 className="text-3xl font-bold text-primary">Intelligent Automation & AI</h3>
-                    <div className="prose prose-invert max-w-none text-neutral-400">
+                    <div className="prose prose-invert max-w-none text-neutral-400 text-xl">
                         <p>
                             Digivixo empowers organizations with cutting-edge automation and AI-driven tools designed to optimize business processes and unlock new levels of efficiency.
                         </p>

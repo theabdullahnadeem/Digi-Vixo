@@ -125,7 +125,7 @@ export default function RootLayout({
         <SmoothScroller>
           <JsonLd />
           <Header />
-          <main className="min-h-screen pt-20">{children}</main>
+          <main className="min-h-screen md:pt-10">{children}</main>
           <Footer />
           <CookieConsent />
           <Chatbot />

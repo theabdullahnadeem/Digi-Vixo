@@ -24,7 +24,7 @@ export default function MobileMenu({ isOpen, onClose, links }: MobileMenuProps) 
 
         if (isOpen) {
             // Document body lock
-            document.body.style.overflow = "hidden";
+            document.body.style.overflow = "auto";
 
             const tl = gsap.timeline();
 

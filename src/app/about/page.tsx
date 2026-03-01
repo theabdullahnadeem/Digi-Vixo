@@ -6,6 +6,7 @@ import FounderPhilosophy from "@/components/about/FounderPhilosophy";
 import TeamPreview from "@/components/home/TeamPreview";
 import CorporateGovernance from "@/components/about/phase3/CorporateGovernance";
 import LeadershipPrinciples from "@/components/about/phase3/LeadershipPrinciples";
+import PageTransitionWrapper from "@/components/layout/PageTransitionWrapper";
 
 export const metadata = {
     title: "About Us | Digivixo - Technical Excellence & Digital Transformation",
@@ -14,7 +15,7 @@ export const metadata = {
 
 export default function AboutPage() {
     return (
-        <main className="flex flex-col">
+        <PageTransitionWrapper className="flex flex-col">
             <BrandStory />
             <MissionVision />
             <CorporateGovernance />
@@ -24,6 +25,6 @@ export default function AboutPage() {
             <FounderPhilosophy />
             {/* Reusing TeamPreview as requested for Team content, or specific About-Team link */}
             <TeamPreview />
-        </main>
+        </PageTransitionWrapper>
     );
 }

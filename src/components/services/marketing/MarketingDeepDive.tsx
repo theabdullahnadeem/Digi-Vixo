@@ -40,7 +40,7 @@ export default function MarketingDeepDive() {
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
                 <div className="left-content space-y-8">
                     <h3 className="text-3xl font-bold text-primary">Strategic Digital Growth</h3>
-                    <div className="prose prose-invert max-w-none text-neutral-400">
+                    <div className="prose prose-invert max-w-none text-neutral-400 text-xl">
                         <p>
                             We provide data-driven digital marketing solutions designed to amplify your brand presence and drive high-quality conversions through technical precision.
                         </p>

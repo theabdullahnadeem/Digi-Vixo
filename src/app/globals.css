@@ -1,51 +1,50 @@
 @import "tailwindcss";
 
 /* BASE VARIABLES 
-  Using a consistent Zinc-based palette for a premium feel.
+  Using a premium pitch-black basis with electric cyan accents for a futuristic SaaS look.
 */
 :root {
-  /* ENFORCED DARK THEME (Professional: High-Contrast) */
+  /* ENFORCED DARK THEME (Professional: High-Contrast pitch black) */
   color-scheme: dark;
-  /* Background: #050505 (Deep Black) */
-  --background: #050505;
-  --foreground: #ffffff;
+  /* Background: #000000 (Pitch Black) */
+  --background: #000000;
+  --foreground: #F8FAFC; /* Slate 50 */
 
-  /* Surface/Cards: #121212 */
-  --card: #121212;
-  --card-foreground: #ffffff;
+  /* Surface/Cards: Deep gray instead of soft gray */
+  --card: #0A0A0A;
+  --card-foreground: #F8FAFC;
 
-  /* Primary Accent: #3B82F6 (Electric Blue) */
-  --primary: #3B82F6;
+  /* Primary Accent: #06B6D4 (Electric Cyan) mixed with Indigo */
+  --primary: #4F46E5;
   --primary-foreground: #ffffff;
 
-  --muted: #404040;
-  --border: #262626;
+  --muted: #171717; /* Neutral 900 */
+  --muted-foreground: #A3A3A3; /* Neutral 400 */
+  --border: #1F2937; /* Gray 800 */
 
   /* Accents */
-  --accent: #3B82F6;
+  --accent: #06B6D4;
   --accent-foreground: #ffffff;
 
-  --brand-blue: #3B82F6;
-  --surface: #121212;
-}
+  --brand-blue: #06B6D4;
+  --brand-indigo: #4F46E5;
+  --surface: #0A0A0A;
 
+  /* Custom Gradients */
+  --grad-primary: linear-gradient(135deg, var(--brand-indigo) 0%, var(--brand-blue) 100%);
+  --grad-surface: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%);
+}
 
 html {
   scroll-behavior: smooth;
 }
 
-/* 
-   We keep the media query block empty or remove it because 
-   we want the dark variables to be the DEFAULT for everyone.
-   (Incognito/Light Mode users will now see the dark theme)
-*/
 @media (prefers-color-scheme: light) {
-  /* Optional: If we ever WANTED a light mode, we'd put it here. 
-     But for now, we enforce dark. */
+  /* Enforce dark */
 }
 
 /* TAILWIND THEME CONFIG */
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
@@ -62,9 +61,13 @@ html {
   --color-border: var(--border);
 
   --color-gold: var(--brand-blue);
-  /* Mapping old variable to new for compatibility, or remove if unused */
   --color-brand-blue: var(--brand-blue);
+  --color-brand-indigo: var(--brand-indigo);
   --color-surface: var(--surface);
+
+  /* Utilities */
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
 
   /* Linking fonts correctly */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;

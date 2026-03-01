@@ -44,7 +44,7 @@ export default function WebAppsDeepDive() {
             <div className="max-w-7xl mx-auto space-y-16">
                 <div className="text-center max-w-3xl mx-auto">
                     <h3 className="text-3xl font-bold text-primary mb-6">Scalable Enterprise Solutions</h3>
-                    <p className="text-neutral-400 text-lg">
+                    <p className="text-neutral-400 text-xl">
                         For businesses requiring more than a static presence, our web application division builds dynamic, data-driven platforms that automate complex workflows and drive operational efficiency.
                     </p>
                 </div>
