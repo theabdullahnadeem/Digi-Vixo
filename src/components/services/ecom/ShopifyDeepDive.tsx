@@ -40,7 +40,7 @@ export default function ShopifyDeepDive() {
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
                 <div className="left-content space-y-8">
                     <h3 className="text-3xl font-bold text-primary">Shopify Platform Engineering</h3>
-                    <div className="prose prose-invert max-w-none text-neutral-400">
+                    <div className="prose prose-invert max-w-none text-neutral-400 text-xl">
                         <p>
                             We provide professional Shopify engineering services that go beyond simple store setup. Our focus is on technical performance, custom functionality, and scalable architecture.
                         </p>

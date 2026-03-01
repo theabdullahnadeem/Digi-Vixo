@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import TeamDetails from "@/components/team/TeamDetails";
 import AdvisoryBoard from "@/components/team/phase4/AdvisoryBoard";
+import PageTransitionWrapper from "@/components/layout/PageTransitionWrapper";
 
 export const metadata: Metadata = {
     title: "Leadership Team | Digivixo",
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function TeamPage() {
     return (
-        <main className="bg-black">
+        <PageTransitionWrapper className="bg-black">
             <div className="relative py-32 px-6 text-center bg-black overflow-hidden">
                 <div
                     className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat opacity-50"
@@ -23,6 +24,6 @@ export default function TeamPage() {
             </div>
             <div className="bg-black p-1" />
             <TeamDetails />
-        </main>
+        </PageTransitionWrapper>
     );
 }

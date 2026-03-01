@@ -40,7 +40,7 @@ export default function WebDevDeepDive() {
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
                 <div className="left-content space-y-8">
                     <h3 className="text-3xl font-bold text-primary">Engineering Excellence</h3>
-                    <div className="prose prose-invert max-w-none text-neutral-400">
+                    <div className="prose prose-invert max-w-none text-neutral-400 text-xl">
                         <p>
                             At Digivixo, we don&apos;t just build websites; we engineer digital assets designed for ultimate performance and long-term business scalability.
                         </p>
