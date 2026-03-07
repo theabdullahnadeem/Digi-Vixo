@@ -36,6 +36,18 @@ export default function Footer() {
                                     Services
                                     <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all group-hover:w-full"></span>
                                 </Link>
+                                <Link href="/case-studies" className="text-sm text-neutral-300 hover:text-white transition-colors relative w-fit group">
+                                    Case Studies
+                                    <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all group-hover:w-full"></span>
+                                </Link>
+                                <Link href="/industries" className="text-sm text-neutral-300 hover:text-white transition-colors relative w-fit group">
+                                    Industries
+                                    <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all group-hover:w-full"></span>
+                                </Link>
+                                <Link href="/pricing" className="text-sm text-neutral-300 hover:text-white transition-colors relative w-fit group">
+                                    Pricing
+                                    <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all group-hover:w-full"></span>
+                                </Link>
                                 <Link href="/team" className="text-sm text-neutral-300 hover:text-white transition-colors relative w-fit group">
                                     Team
                                     <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all group-hover:w-full"></span>

@@ -8,5 +8,6 @@ export default function robots(): MetadataRoute.Robots {
             disallow: ['/admin/', '/private/', '/api/'],
         },
         sitemap: 'https://digivixo.site/sitemap.xml',
+        host: 'https://digivixo.site',
     };
 }

@@ -1,5 +1,13 @@
 import Hero from "@/components/home/Hero";
+import StatsBar from "@/components/home/StatsBar";
+import CompanyStory from "@/components/home/CompanyStory";
 import ServicesPreview from "@/components/home/ServicesPreview";
+import CaseStudiesPreview from "@/components/home/CaseStudiesPreview";
+import PricingPreview from "@/components/home/PricingPreview";
+import LeadMagnetOffers from "@/components/home/LeadMagnetOffers";
+import Testimonials from "@/components/home/Testimonials";
+import LogoBar from "@/components/home/LogoBar";
+import IndustriesPreview from "@/components/home/IndustriesPreview";
 import DesignPreview from "@/components/home/DesignPreview";
 import TeamPreview from "@/components/home/TeamPreview";
 import WhyChooseUs from "@/components/home/revamp/WhyChooseUs";
@@ -22,13 +30,21 @@ export default function Home() {
   return (
     <main className="flex flex-col">
       <Hero />
+      <LogoBar />
+      <StatsBar />
+      <CompanyStory />
       <ImpactMetrics />
       <WhyChooseUs />
       <GlobalMap />
       <ServicesPreview />
+      <CaseStudiesPreview />
+      <PricingPreview />
+      <LeadMagnetOffers />
+      <Testimonials />
       <AiProductPreview />
       <Process />
       <SuccessStories />
+      <IndustriesPreview />
       <DesignPreview />
       <TeamPreview />
     </main>
