@@ -73,9 +73,9 @@ export default function Header() {
 
       <Link
         href="/contact"
-        className="hidden md:flex px-6 py-2.5 rounded-full text-sm font-semibold bg-white text-black hover:bg-brand-blue hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(6,182,212,0.4)]"
+        className="hidden md:flex px-6 py-2.5 rounded-full text-sm font-bold bg-cyan-400 text-black hover:bg-cyan-300 transition-all duration-300 shadow-[0_0_15px_rgba(34,211,238,0.3)] hover:shadow-[0_0_25px_rgba(34,211,238,0.6)] hover:-translate-y-0.5"
       >
-        Let's Talk
+        Get Free Consultation
       </Link>
 
       {/* Mobile Menu Trigger */}

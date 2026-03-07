@@ -19,19 +19,18 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://digivixo.site"),
   title: {
-    default: "Digivixo | Affordable Custom SaaS Development & AI Solutions",
+    default: "Digivixo | SaaS Development Agency & AI Automation Solutions",
     template: "%s | Digivixo",
   },
   description:
-    "Digivixo is a leading AI automation agency specializing in affordable custom SaaS development, premium UI UX design, and scalable e-commerce solutions for startups.",
+    "Digivixo is a top SaaS development agency providing custom web application development, AI automation solutions, Shopify development agency services, and scalable business automation systems.",
   keywords: [
-    "affordable custom saas development",
-    "saas development agency for startups",
-    "AI automation agency USA",
-    "UI UX design for mobile web apps",
-    "shopify app development services",
-    "custom web applications",
-    "intelligent automation",
+    "SaaS development agency",
+    "custom web application development",
+    "AI automation solutions",
+    "Shopify development agency",
+    "business automation systems",
+    "premium UI UX design",
     "Next.js development company",
   ],
   authors: [{ name: "Digivixo Team" }],
@@ -43,9 +42,9 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "Digivixo | Affordable Custom SaaS Development & AI Solutions",
+    title: "Digivixo | SaaS Development Agency & AI Automation Solutions",
     description:
-      "Transform your business with Digivixo's affordable custom SaaS development and AI automation. We specialize in premium UI UX and scalable digital solutions.",
+      "Transform your business with Digivixo's custom web application development and business automation systems. We are your trusted SaaS development agency.",
     url: "https://digivixo.site",
     siteName: "Digivixo",
     locale: "en_US",
@@ -55,15 +54,15 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Digivixo - Affordable Custom SaaS Development",
+        alt: "Digivixo - SaaS Development Agency",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Digivixo | Affordable Custom SaaS Development & AI Solutions",
+    title: "Digivixo | SaaS Development Agency & AI Automation Solutions",
     description:
-      "Expert SaaS development and AI automation agency for modern startups.",
+      "Expert SaaS development and AI automation agency for modern startups and enterprises.",
     creator: "@digivixo",
     images: ["/twitter-image.jpg"],
   },
@@ -122,6 +121,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} antialiased font-sans`}>
+        {/* <!-- Recommendation: Consider upgrading to digivixo.com or digivixo.io for improved brand trust with enterprise clients --> */}
         <SmoothScroller>
           <JsonLd />
           <Header />

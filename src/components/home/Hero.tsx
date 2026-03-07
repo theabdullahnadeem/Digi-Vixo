@@ -30,8 +30,15 @@ export default function Hero() {
 
     return (
         <section ref={container} className="relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden bg-black">
-            {/* Unique Background */}
-            <div className="absolute top-0 right-0 w-full h-[500px] bg-linear-to-b from-brand-indigo/20 via-brand-blue/5 to-transparent blur-3xl pointer-events-none" />
+            {/* Unsplash Background with Dark Overlay */}
+            <div 
+                className="absolute inset-0 z-0 opacity-30 bg-cover bg-center bg-no-repeat"
+                style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2670&auto=format&fit=crop")' }}
+            />
+            <div className="absolute inset-0 bg-linear-to-b from-black/80 via-black/95 to-black z-0 pointer-events-none" />
+            
+            {/* Unique Background Gradient */}
+            <div className="absolute top-0 right-0 w-full h-[500px] bg-linear-to-b from-cyan-500/10 via-indigo-500/5 to-transparent blur-3xl pointer-events-none z-0" />
             
             <div className="max-w-7xl mx-auto px-6 w-full grid lg:grid-cols-2 gap-16 items-center relative z-10 pt-10">
                 {/* Left Content */}
@@ -41,24 +48,24 @@ export default function Hero() {
                         <span>Redefining Digital Experiences</span>
                     </div>
 
-                    <h1 className="hero-title text-6xl md:text-8xl font-black tracking-tighter text-white leading-[1.1] mb-6" style={{ perspective: '1000px' }}>
-                        <div className="line origin-bottom">Build Faster.</div>
-                        <div className="line origin-bottom">Scale <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-indigo-500">Smarter.</span></div>
-                        <div className="line origin-bottom">Dominate.</div>
+                    <h1 className="hero-title text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter text-white leading-[1.1] mb-6" style={{ perspective: '1000px' }}>
+                        <div className="line origin-bottom">We Build High-Performance</div>
+                        <div className="line origin-bottom">Websites, SaaS &</div>
+                        <div className="line origin-bottom"><span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-indigo-500">Automation Systems</span></div>
+                        <div className="line origin-bottom">To Scale Faster.</div>
                     </h1>
 
                     <p className="hero-desc text-lg md:text-xl text-neutral-400 max-w-xl leading-relaxed mb-10">
-                        We architect premium, high-performance SaaS platforms and AI-driven ecosystems that push modern businesses beyond the limitations of standard software.
+                        Helping startups and growing businesses launch scalable digital products, AI automation systems, and modern web platforms.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-5">
-                        <Link href="/services" className="hero-btn group flex items-center justify-center gap-3 px-8 py-4 bg-cyan-500 text-black rounded-xl font-bold text-lg hover:bg-cyan-400 transition-all shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:shadow-[0_0_40px_rgba(6,182,212,0.6)] hover:-translate-y-1">
-                            Start Building Now
+                        <Link href="/contact" className="hero-btn group flex items-center justify-center gap-3 px-8 py-4 bg-cyan-500 text-black rounded-xl font-bold text-lg hover:bg-cyan-400 transition-all shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:shadow-[0_0_40px_rgba(6,182,212,0.6)] hover:-translate-y-1">
+                            Get a Free Consultation
                             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                         </Link>
-                        <Link href="/contact" className="hero-btn group flex items-center justify-center gap-3 px-8 py-4 bg-white/5 text-white border border-white/20 rounded-xl font-bold text-lg hover:bg-white/10 transition-all hover:border-white/30 backdrop-blur-md">
-                            <Play className="w-5 h-5 text-cyan-400" />
-                            Partner With Us
+                        <Link href="/case-studies" className="hero-btn group flex items-center justify-center gap-3 px-8 py-4 bg-white/5 text-white border border-white/20 rounded-xl font-bold text-lg hover:bg-white/10 transition-all hover:border-white/30 backdrop-blur-md">
+                            View Our Case Studies
                         </Link>
                     </div>
                 </div>
