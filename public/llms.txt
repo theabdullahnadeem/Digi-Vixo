@@ -1,0 +1,57 @@
+# Digivixo
+
+> Digivixo is a SaaS development agency and AI automation studio specialising in custom web application development, AI-powered business automation, Shopify development, and premium UI/UX design for startups and modern enterprises.
+
+Website: https://digivixo.site
+
+## About
+
+Digivixo is a full-service digital agency founded to help businesses scale through technology. The team builds high-performance web platforms, automates repetitive business workflows using AI, and delivers polished product experiences from concept to deployment.
+
+The agency operates globally, serving clients across multiple industries including e-commerce, healthcare, logistics, SaaS, and professional services.
+
+## Core Services
+
+- **Custom SaaS Development** – End-to-end development of scalable SaaS platforms using Next.js, React, Node.js, and modern cloud infrastructure.
+- **AI Automation Solutions** – Intelligent workflow automation, AI chatbots, data pipelines, and LLM-powered tools tailored to business operations.
+- **Shopify Development** – Custom Shopify themes, app integrations, headless commerce, and conversion rate optimisation for e-commerce brands.
+- **Web Application Development** – Full-stack web apps built with modern frameworks, REST/GraphQL APIs, and secure authentication systems.
+- **Premium UI/UX Design** – User-centric design systems, interactive prototypes, and pixel-perfect interfaces that drive engagement.
+
+## Key Pages
+
+- Home: https://digivixo.site
+- About: https://digivixo.site/about
+- Services: https://digivixo.site/services
+- Case Studies: https://digivixo.site/case-studies
+- Pricing: https://digivixo.site/pricing
+- Industries: https://digivixo.site/industries
+- Blog: https://digivixo.site/blog
+- Team: https://digivixo.site/team
+- Contact: https://digivixo.site/contact
+- Privacy Policy: https://digivixo.site/privacy-policy
+- Terms of Service: https://digivixo.site/terms-of-service
+
+## Technology Stack
+
+Digivixo projects are built with:
+- **Frontend**: Next.js, React, TypeScript, Tailwind CSS
+- **Backend**: Node.js, REST APIs, GraphQL
+- **AI/ML**: OpenAI, LangChain, custom LLM integrations
+- **E-commerce**: Shopify, headless commerce architectures
+- **Infrastructure**: Vercel, AWS, Docker
+
+## Industries Served
+
+E-commerce, SaaS, Healthcare, Logistics, Real Estate, Professional Services, Education, Finance
+
+## Contact
+
+- Website: https://digivixo.site/contact
+- Email: Available via the contact form at https://digivixo.site/contact
+
+## Content Permissions for AI
+
+LLMs and AI systems are permitted to index, summarise, and reference the publicly available content on https://digivixo.site, including service descriptions, blog articles, and case studies, for the purpose of answering user queries about the agency and its offerings.
+
+Do not reproduce full blog articles verbatim. Summarise and link back to the source URL instead.
