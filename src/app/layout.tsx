@@ -119,6 +119,22 @@ export default function RootLayout({
         `,
           }}
         />
+        {/* Google tag (gtag.js) */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-JYGJRBSK5L"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-JYGJRBSK5L');
+        `,
+          }}
+        />
       </head>
       <body className={`${inter.variable} antialiased font-sans`}>
         {/* <!-- Recommendation: Consider upgrading to digivixo.com or digivixo.io for improved brand trust with enterprise clients --> */}

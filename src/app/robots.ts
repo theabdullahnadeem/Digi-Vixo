@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: ['/admin/', '/private/', '/api/'],
         },
-        sitemap: 'https://digivixo.site/sitemap.xml',
-        host: 'https://digivixo.site',
+        sitemap: ['https://digivixo.site/sitemap.xml', 'https://digivixo.com/sitemap.xml'],
+        host: 'https://digivixo.site', // primary host
     };
 }

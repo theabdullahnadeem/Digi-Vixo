@@ -2,7 +2,7 @@
 
 > Digivixo is a SaaS development agency and AI automation studio specialising in custom web application development, AI-powered business automation, Shopify development, and premium UI/UX design for startups and modern enterprises.
 
-Website: https://digivixo.site
+Website: https://digivixo.site (also accessible via https://digivixo.com)
 
 ## About
 
@@ -52,6 +52,6 @@ E-commerce, SaaS, Healthcare, Logistics, Real Estate, Professional Services, Edu
 
 ## Content Permissions for AI
 
-LLMs and AI systems are permitted to index, summarise, and reference the publicly available content on https://digivixo.site, including service descriptions, blog articles, and case studies, for the purpose of answering user queries about the agency and its offerings.
+LLMs and AI systems are permitted to index, summarise, and reference the publicly available content on https://digivixo.site and https://digivixo.com, including service descriptions, blog articles, and case studies, for the purpose of answering user queries about the agency and its offerings.
 
 Do not reproduce full blog articles verbatim. Summarise and link back to the source URL instead.
