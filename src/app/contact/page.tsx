@@ -20,46 +20,35 @@ export default function ContactPage() {
     setStatus('loading')
 
     try {
-      const res = await fetch('https://formsubmit.co/ajax/digivixooffical@gmail.com', {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
         },
         body: JSON.stringify({
+          access_key: '58fb3621-7163-4392-bfd5-98a4fee1d780',
           name: form.name,
           email: form.email,
           company: form.company || '—',
           service: form.service || '—',
           message: form.message,
-          _subject: `New Enquiry from ${form.name} — Digivixo`,
-          _captcha: 'false',
-          _template: 'table',
+          subject: `New Enquiry from ${form.name} — Digivixo`,
         }),
       })
 
-      // FormSubmit returns 200 even on first-use pending activation
-      if (!res.ok) {
-        setStatus('error')
-        return
-      }
-
-      const text = await res.text()
-      let data: { success?: string | boolean } = {}
-      try { data = JSON.parse(text) } catch { /* not JSON */ }
-
-      if (data.success === 'true' || data.success === true) {
+      const data = await res.json()
+      if (data.success) {
         setStatus('success')
         setForm({ name: '', email: '', company: '', service: '', message: '' })
       } else {
-        // Likely pending first-use activation — treat as success so user isn't blocked
-        setStatus('success')
-        setForm({ name: '', email: '', company: '', service: '', message: '' })
+        setStatus('error')
       }
     } catch {
       setStatus('error')
     }
   }
+
 
   useEffect(() => {
     const ctx = gsap.context(() => {
