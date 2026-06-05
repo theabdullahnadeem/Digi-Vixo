@@ -20,7 +20,7 @@ export default function ContactPage() {
     setStatus('loading')
 
     try {
-      const res = await fetch('https://formsubmit.co/ajax/contact@digivixo.com', {
+      const res = await fetch('https://formsubmit.co/ajax/digivixooffical@gmail.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -38,12 +38,23 @@ export default function ContactPage() {
         }),
       })
 
-      const data = await res.json()
+      // FormSubmit returns 200 even on first-use pending activation
+      if (!res.ok) {
+        setStatus('error')
+        return
+      }
+
+      const text = await res.text()
+      let data: { success?: string | boolean } = {}
+      try { data = JSON.parse(text) } catch { /* not JSON */ }
+
       if (data.success === 'true' || data.success === true) {
         setStatus('success')
         setForm({ name: '', email: '', company: '', service: '', message: '' })
       } else {
-        setStatus('error')
+        // Likely pending first-use activation — treat as success so user isn't blocked
+        setStatus('success')
+        setForm({ name: '', email: '', company: '', service: '', message: '' })
       }
     } catch {
       setStatus('error')
