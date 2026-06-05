@@ -1,152 +1,56 @@
-import { ReactNode } from "react";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import CookieConsent from "@/components/layout/CookieConsent";
-import Chatbot from "@/components/layout/Chatbot";
-import SmoothScroller from "@/components/layout/SmoothScroller";
-import JsonLd from "@/components/seo/JsonLd";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import Script from "next/script";
+'use client'
+import './globals.css'
+import { useState } from 'react'
+import { cormorant, dmSans } from '@/lib/fonts'
+import Preloader from '@/components/layout/Preloader'
+import SmoothScroll from '@/components/layout/SmoothScroll'
+import Navbar from '@/components/layout/Navbar'
+import Footer from '@/components/layout/Footer'
+import CustomCursor from '@/components/ui/CustomCursor'
+import { PreloaderContext } from '@/lib/PreloaderContext'
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const [loaded, setLoaded] = useState(false)
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://digivixo.site"),
-  title: {
-    default: "Digivixo | SaaS Development Agency & AI Automation Solutions",
-    template: "%s | Digivixo",
-  },
-  description:
-    "Digivixo is a top SaaS development agency providing custom web application development, AI automation solutions, Shopify development agency services, and scalable business automation systems.",
-  keywords: [
-    "SaaS development agency",
-    "custom web application development",
-    "AI automation solutions",
-    "Shopify development agency",
-    "business automation systems",
-    "premium UI UX design",
-    "Next.js development company",
-  ],
-  authors: [{ name: "Digivixo Team" }],
-  creator: "Digivixo",
-  publisher: "Digivixo",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  openGraph: {
-    title: "Digivixo | SaaS Development Agency & AI Automation Solutions",
-    description:
-      "Transform your business with Digivixo's custom web application development and business automation systems. We are your trusted SaaS development agency.",
-    url: "https://digivixo.site",
-    siteName: "Digivixo",
-    locale: "en_US",
-    type: "website",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Digivixo - SaaS Development Agency",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Digivixo | SaaS Development Agency & AI Automation Solutions",
-    description:
-      "Expert SaaS development and AI automation agency for modern startups and enterprises.",
-    creator: "@digivixo",
-    images: ["/twitter-image.jpg"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  alternates: {
-    canonical: "/",
-  },
-  icons: {
-    icon: "/icon.png",
-    apple: "/apple-icon.png",
-  },
-  manifest: "/manifest.json",
-  other: {
-    "google-adsense-account": "ca-pub-1986567282205937",
-  },
-};
-
-export const viewport = {
-  themeColor: "black",
-  width: "device-width",
-  initialScale: 1,
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: ReactNode;
-}>) {
   return (
-    <html lang="en" className="dark" style={{ colorScheme: "dark" }}>
+    <html lang="en" className={`${cormorant.variable} ${dmSans.variable}`}>
       <head>
-        {/* Classic Google Analytics Snippet */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-JYGJRBSK5L"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-JYGJRBSK5L');
-        `,
-          }}
+        <title>Digivixo — AI Calling Agents for Accounting Firms</title>
+        <meta
+          name="description"
+          content="We reduce missed calls from 32% to 5% and increase revenue by 13% for US accounting firms. Fully managed AI calling infrastructure."
         />
-        {/* Google tag (gtag.js) */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-JYGJRBSK5L"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-JYGJRBSK5L');
-        `,
-          }}
+        <meta
+          name="keywords"
+          content="AI calling agent, CPA firm AI, accounting firm automation, missed call recovery"
         />
+        <meta property="og:title" content="Digivixo — AI Calling Agents for Accounting Firms" />
+        <meta property="og:description" content="Recover missed calls. Recover revenue." />
+        <meta property="og:url" content="https://digivixo.com" />
+        <meta property="og:site_name" content="Digivixo" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Digivixo — AI Calling Agents" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
-      <body className={`${inter.variable} antialiased font-sans`}>
-        {/* <!-- Recommendation: Consider upgrading to digivixo.com or digivixo.io for improved brand trust with enterprise clients --> */}
-        <SmoothScroller>
-          <JsonLd />
-          <Header />
-          <main className="min-h-screen md:pt-10">{children}</main>
-          <Footer />
-          <CookieConsent />
-          <Chatbot />
-        </SmoothScroller>
+      <body>
+        {!loaded && <Preloader onComplete={() => setLoaded(true)} />}
+        <SmoothScroll>
+          <CustomCursor />
+          <PreloaderContext.Provider value={loaded}>
+            <div
+              style={{
+                opacity: loaded ? 1 : 0,
+                transition: 'opacity 0.6s ease',
+              }}
+            >
+              <Navbar />
+              <main>{children}</main>
+              <Footer />
+            </div>
+          </PreloaderContext.Provider>
+        </SmoothScroll>
       </body>
     </html>
-  );
+  )
 }

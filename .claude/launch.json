@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "digivixo",
+      "runtimeExecutable": "C:\\Windows\\System32\\cmd.exe",
+      "runtimeArgs": ["/c", "D:\\Digivixo\\Digi-Vixo\\start-dev.cmd"],
+      "port": 3000,
+      "autoPort": true
+    }
+  ]
+}
