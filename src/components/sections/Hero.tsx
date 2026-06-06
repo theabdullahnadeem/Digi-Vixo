@@ -86,7 +86,7 @@ export default function Hero({ ready }: { ready: boolean }) {
       />
 
       <div
-        className="container"
+        className="container hero-grid"
         style={{
           position: 'relative',
           zIndex: 1,
@@ -149,7 +149,7 @@ export default function Hero({ ready }: { ready: boolean }) {
                   className="hero-line"
                   style={{
                     fontFamily: 'var(--font-cormorant), serif',
-                    fontSize: 'clamp(52px, 7.5vw, 120px)',
+                    fontSize: 'clamp(32px, 7.5vw, 120px)',
                     fontWeight: 700,
                     lineHeight: 0.93,
                     letterSpacing: '-0.02em',
@@ -209,6 +209,7 @@ export default function Hero({ ready }: { ready: boolean }) {
 
           {/* Trust strip */}
           <div
+            className="hero-trust-strip"
             style={{
               display: 'flex',
               gap: '28px',
@@ -286,8 +287,17 @@ export default function Hero({ ready }: { ready: boolean }) {
       {/* Mobile: stack */}
       <style>{`
         @media (max-width: 900px) {
-          .hero-grid { grid-template-columns: 1fr !important; }
+          .hero-grid {
+            grid-template-columns: 1fr !important;
+            gap: 32px !important;
+          }
           .hero-mockup { display: none !important; }
+        }
+        @media (max-width: 640px) {
+          .hero-trust-strip {
+            flex-wrap: wrap !important;
+            gap: 16px 24px !important;
+          }
         }
       `}</style>
     </section>

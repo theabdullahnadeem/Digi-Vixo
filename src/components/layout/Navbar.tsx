@@ -161,7 +161,7 @@ export default function Navbar() {
                 height: '1px',
                 background: 'var(--cream)',
                 transition: 'all 0.3s',
-                transform: menuOpen ? 'rotate(45deg) translate(4px, 4px)' : 'none',
+                transform: menuOpen ? 'translateY(6px) rotate(45deg)' : 'none',
               }}
             />
             <span
@@ -181,7 +181,7 @@ export default function Navbar() {
                 height: '1px',
                 background: 'var(--cream)',
                 transition: 'all 0.3s',
-                transform: menuOpen ? 'rotate(-45deg) translate(4px, -4px)' : 'none',
+                transform: menuOpen ? 'translateY(-6px) rotate(-45deg)' : 'none',
               }}
             />
           </button>
@@ -190,13 +190,16 @@ export default function Navbar() {
 
       {/* Mobile overlay */}
       <div
-        className="fixed inset-0 z-[999] lg:hidden flex flex-col justify-center items-center gap-8 transition-all duration-500"
+        className="fixed inset-0 z-[999] lg:hidden flex flex-col justify-start items-center gap-8 transition-all duration-500"
         style={{
           background: 'var(--void)',
           opacity: menuOpen ? 1 : 0,
           pointerEvents: menuOpen ? 'auto' : 'none',
           transform: menuOpen ? 'translateY(0)' : 'translateY(-100%)',
           zIndex: 999,
+          overflowY: 'auto',
+          paddingTop: 'calc(var(--nav-height) + 40px)',
+          paddingBottom: '60px',
         }}
       >
         {navLinks.map((link) => (
@@ -230,6 +233,7 @@ export default function Navbar() {
             borderRadius: '8px',
             textDecoration: 'none',
             marginTop: '16px',
+            flexShrink: 0,
           }}
         >
           Book a Call →

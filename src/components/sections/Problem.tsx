@@ -52,14 +52,7 @@ export default function Problem() {
       style={{ background: 'var(--void)', borderTop: '1px solid var(--void-border)' }}
     >
       <div className="container">
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '80px',
-            alignItems: 'center',
-          }}
-        >
+        <div className="problem-grid">
           {/* Left */}
           <div>
             <RevealText className="mb-5">
@@ -212,17 +205,7 @@ export default function Problem() {
             </div>
 
             {/* Floating badge */}
-            <div
-              style={{
-                position: 'absolute',
-                top: '-20px',
-                right: '-20px',
-                background: 'var(--void-3)',
-                border: '1px solid rgba(201,168,76,0.3)',
-                padding: '16px 20px',
-                boxShadow: '0 16px 40px rgba(0,0,0,0.5)',
-              }}
-            >
+            <div className="problem-badge">
               <p style={{ fontFamily: 'var(--font-cormorant), serif', fontSize: '32px', fontWeight: 600, color: 'var(--gold)', lineHeight: 1 }}>
                 $0
               </p>
@@ -233,6 +216,37 @@ export default function Problem() {
           </div>
         </div>
       </div>
+      <style>{`
+        .problem-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 40px;
+          align-items: center;
+        }
+        @media (min-width: 900px) {
+          .problem-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+          }
+        }
+        .problem-badge {
+          position: absolute;
+          top: -16px;
+          right: 0px;
+          background: var(--void-3);
+          border: 1px solid rgba(201,168,76,0.3);
+          padding: 12px 16px;
+          box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+          z-index: 10;
+        }
+        @media (min-width: 640px) {
+          .problem-badge {
+            top: -20px;
+            right: -20px;
+            padding: 16px 20px;
+          }
+        }
+      `}</style>
     </section>
   )
 }

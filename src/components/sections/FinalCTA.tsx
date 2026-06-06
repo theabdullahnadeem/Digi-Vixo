@@ -65,7 +65,7 @@ export default function FinalCTA() {
               <h2
                 style={{
                   fontFamily: 'var(--font-cormorant), serif',
-                  fontSize: 'clamp(64px, 11vw, 160px)',
+                  fontSize: 'clamp(36px, 11vw, 160px)',
                   fontWeight: 700,
                   lineHeight: 0.9,
                   letterSpacing: '-0.025em',
@@ -115,18 +115,7 @@ export default function FinalCTA() {
         </RevealText>
 
         {/* Bottom divider with trust badges */}
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: '40px',
-            marginTop: '80px',
-            paddingTop: '40px',
-            borderTop: '1px solid var(--void-border)',
-            flexWrap: 'wrap',
-          }}
-        >
+        <div className="cta-badges">
           {['48hr Setup', 'No Contracts', 'Fully Managed', 'Cancel Anytime'].map((badge) => (
             <div key={badge} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <div style={{ width: '5px', height: '5px', borderRadius: '50%', background: 'var(--gold)', opacity: 0.6 }} />
@@ -145,6 +134,25 @@ export default function FinalCTA() {
           ))}
         </div>
       </div>
+      <style>{`
+        .cta-badges {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 16px;
+          margin-top: 60px;
+          padding-top: 32px;
+          border-top: 1px solid var(--void-border);
+          flex-wrap: wrap;
+        }
+        @media (min-width: 640px) {
+          .cta-badges {
+            gap: 40px;
+            margin-top: 80px;
+            padding-top: 40px;
+          }
+        }
+      `}</style>
     </section>
   )
 }

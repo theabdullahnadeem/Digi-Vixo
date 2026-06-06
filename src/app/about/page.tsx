@@ -126,7 +126,14 @@ export default function AboutPage() {
           </RevealText>
           <div className="timeline-wrap">
             {timeline.map((item, i) => (
-              <div key={i} className="timeline-item" style={{ display: 'grid', gridTemplateColumns: '100px 1fr', gap: '32px', padding: '36px 0', borderBottom: i < timeline.length - 1 ? '1px solid var(--void-border)' : 'none' }}>
+              <div
+                key={i}
+                className="timeline-item timeline-item-grid"
+                style={{
+                  padding: '36px 0',
+                  borderBottom: i < timeline.length - 1 ? '1px solid var(--void-border)' : 'none',
+                }}
+              >
                 <p style={{ fontFamily: 'var(--font-cormorant), serif', fontSize: '36px', fontWeight: 600, color: 'var(--gold)', opacity: 0.5 }}>{item.year}</p>
                 <div>
                   <p style={{ fontFamily: 'var(--font-cormorant), serif', fontSize: 'clamp(20px, 2.5vw, 28px)', fontWeight: 500, color: 'var(--cream)', marginBottom: '8px' }}>{item.title}</p>
@@ -193,6 +200,19 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <style>{`
+        .timeline-item-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+        @media (min-width: 640px) {
+          .timeline-item-grid {
+            grid-template-columns: 100px 1fr;
+            gap: 32px;
+          }
+        }
+      `}</style>
     </div>
   )
 }

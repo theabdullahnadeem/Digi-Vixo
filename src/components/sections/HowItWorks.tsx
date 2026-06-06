@@ -82,7 +82,7 @@ export default function HowItWorks() {
           <MagneticButton href="/contact">Start Today →</MagneticButton>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
+        <div className="steps-grid">
           {steps.map((step, i) => (
             <div
               key={i}
@@ -164,6 +164,18 @@ export default function HowItWorks() {
           ))}
         </div>
       </div>
+      <style>{`
+        .steps-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+        @media (min-width: 768px) {
+          .steps-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+      `}</style>
     </section>
   )
 }

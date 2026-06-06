@@ -143,7 +143,7 @@ export default function BlogPage() {
             ) : (
               <form
                 onSubmit={(e) => { e.preventDefault(); setSubmitted(true) }}
-                style={{ display: 'flex', gap: '0', maxWidth: '480px', margin: '0 auto' }}
+                className="subscribe-form"
               >
                 <input
                   type="email"
@@ -219,6 +219,26 @@ export default function BlogPage() {
         }
         .blog-card:hover .read-more-text {
           color: var(--cream) !important;
+        }
+        .subscribe-form {
+          display: flex;
+          gap: 0;
+          max-width: 480px;
+          margin: 0 auto;
+        }
+        @media (max-width: 480px) {
+          .subscribe-form {
+            flex-direction: column;
+            gap: 12px;
+          }
+          .subscribe-form input {
+            border-radius: 8px !important;
+            border-right: 1px solid var(--void-border) !important;
+          }
+          .subscribe-form button {
+            border-radius: 8px !important;
+            width: 100%;
+          }
         }
       `}</style>
     </div>

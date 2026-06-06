@@ -219,24 +219,26 @@ export default function PricingPage() {
 
           {/* Comparison Table */}
           <div style={{ border: '1px solid var(--void-border)', borderRadius: '12px', overflow: 'hidden', background: 'var(--void-2)' }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '14px' }}>
-              <thead>
-                <tr style={{ background: 'var(--void-3)', borderBottom: '1px solid var(--void-border)' }}>
-                  <th style={{ padding: '20px 24px', color: 'var(--cream)', fontWeight: 600 }}>Operational Vector</th>
-                  <th style={{ padding: '20px 24px', color: 'var(--cream-muted)', fontWeight: 500 }}>Traditional Front Desk</th>
-                  <th style={{ padding: '20px 24px', color: 'var(--gold)', fontWeight: 600 }}>Digivixo AI Answering</th>
-                </tr>
-              </thead>
-              <tbody>
-                {comparisonData.map((row, idx) => (
-                  <tr key={idx} style={{ borderBottom: idx < comparisonData.length - 1 ? '1px solid var(--void-border)' : 'none' }}>
-                    <td style={{ padding: '18px 24px', color: 'var(--cream)', fontWeight: 500 }}>{row.metric}</td>
-                    <td style={{ padding: '18px 24px', color: 'var(--cream-dim)' }}>{row.human}</td>
-                    <td style={{ padding: '18px 24px', color: row.accent ? 'var(--gold)' : 'var(--cream-muted)', fontWeight: row.accent ? 500 : 400 }}>{row.ai}</td>
+            <div style={{ overflowX: 'auto', width: '100%', WebkitOverflowScrolling: 'touch' }}>
+              <table style={{ minWidth: '640px', width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '14px' }}>
+                <thead>
+                  <tr style={{ background: 'var(--void-3)', borderBottom: '1px solid var(--void-border)' }}>
+                    <th style={{ padding: '20px 24px', color: 'var(--cream)', fontWeight: 600 }}>Operational Vector</th>
+                    <th style={{ padding: '20px 24px', color: 'var(--cream-muted)', fontWeight: 500 }}>Traditional Front Desk</th>
+                    <th style={{ padding: '20px 24px', color: 'var(--gold)', fontWeight: 600 }}>Digivixo AI Answering</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {comparisonData.map((row, idx) => (
+                    <tr key={idx} style={{ borderBottom: idx < comparisonData.length - 1 ? '1px solid var(--void-border)' : 'none' }}>
+                      <td style={{ padding: '18px 24px', color: 'var(--cream)', fontWeight: 500 }}>{row.metric}</td>
+                      <td style={{ padding: '18px 24px', color: 'var(--cream-dim)' }}>{row.human}</td>
+                      <td style={{ padding: '18px 24px', color: row.accent ? 'var(--gold)' : 'var(--cream-muted)', fontWeight: row.accent ? 500 : 400 }}>{row.ai}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>

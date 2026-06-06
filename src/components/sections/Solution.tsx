@@ -122,14 +122,7 @@ export default function Solution() {
       style={{ background: 'var(--void-2)', borderTop: '1px solid var(--void-border)' }}
     >
       <div className="container">
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '80px',
-            alignItems: 'center',
-          }}
-        >
+        <div className="solution-grid">
           {/* Left: visual */}
           <div style={{ position: 'relative' }}>
             {/* Background image */}
@@ -145,32 +138,12 @@ export default function Solution() {
             </div>
 
             {/* Floating call card */}
-            <div
-              style={{
-                position: 'absolute',
-                bottom: '-24px',
-                left: '-24px',
-                right: '40px',
-                background: 'rgba(15,15,15,0.97)',
-                border: '1px solid rgba(201,168,76,0.25)',
-                padding: '20px 24px',
-                boxShadow: '0 24px 60px rgba(0,0,0,0.6)',
-                backdropFilter: 'blur(20px)',
-              }}
-            >
+            <div className="solution-call-card">
               <PhoneAnimation />
             </div>
 
             {/* Corner badge */}
-            <div
-              style={{
-                position: 'absolute',
-                top: '-16px',
-                right: '-16px',
-                background: 'var(--gold)',
-                padding: '12px 16px',
-              }}
-            >
+            <div className="solution-corner-badge">
               <p style={{ fontFamily: 'var(--font-cormorant), serif', fontSize: '22px', fontWeight: 600, color: 'var(--void)', lineHeight: 1 }}>
                 24/7
               </p>
@@ -253,6 +226,53 @@ export default function Solution() {
           </div>
         </div>
       </div>
+      <style>{`
+        .solution-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 60px;
+          align-items: center;
+        }
+        @media (min-width: 900px) {
+          .solution-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+          }
+        }
+        .solution-call-card {
+          position: absolute;
+          bottom: -24px;
+          left: 12px;
+          right: 12px;
+          background: rgba(15,15,15,0.97);
+          border: 1px solid rgba(201,168,76,0.25);
+          padding: 16px 20px;
+          box-shadow: 0 24px 60px rgba(0,0,0,0.6);
+          backdrop-filter: blur(20px);
+          z-index: 10;
+        }
+        @media (min-width: 640px) {
+          .solution-call-card {
+            left: -24px;
+            right: 40px;
+            padding: 20px 24px;
+          }
+        }
+        .solution-corner-badge {
+          position: absolute;
+          top: -16px;
+          right: 0px;
+          background: var(--gold);
+          padding: 10px 12px;
+          z-index: 10;
+        }
+        @media (min-width: 640px) {
+          .solution-corner-badge {
+            right: -16px;
+            padding: 12px 16px;
+          }
+        }
+      `}</style>
     </section>
   )
 }

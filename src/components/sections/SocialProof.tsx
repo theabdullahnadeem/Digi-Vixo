@@ -88,15 +88,25 @@ export default function SocialProof() {
           What happens when every call gets answered.
         </p>
 
+        <style>{`
+          .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1px;
+          }
+          @media (min-width: 768px) {
+            .stats-grid {
+              grid-template-columns: repeat(3, 1fr);
+            }
+          }
+        `}</style>
+
         <div
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: '1px',
             background: 'var(--void-border)',
             border: '1px solid var(--void-border)',
           }}
-          className="grid-cols-1"
+          className="stats-grid"
         >
           {stats.map((stat, i) => (
             <div
