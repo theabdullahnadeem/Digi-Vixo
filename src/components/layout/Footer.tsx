@@ -73,7 +73,7 @@ export default function Footer() {
                   marginBottom: '24px',
                 }}
               >
-                AI calling infrastructure for modern accounting firms. Recover missed revenue, 24/7 — without adding headcount.
+                Custom software & voice AI infrastructure for modern businesses. Recover missed revenue, 24/7 — without adding headcount.
               </p>
 
               {/* Operational Status */}
@@ -259,7 +259,7 @@ export default function Footer() {
                   maxWidth: '320px',
                 }}
               >
-                Strategies on voice AI, workflow automation, and CPA revenue recovery — delivered monthly.
+                Strategies on voice AI, workflow automation, and business revenue recovery — delivered monthly.
               </p>
 
               {subscribed ? (
@@ -401,7 +401,7 @@ export default function Footer() {
               textTransform: 'uppercase',
             }}
           >
-            AI Calling Infrastructure for Modern Accounting Firms
+            Custom Software & AI Answering Infrastructure
           </p>
         </div>
       </div>

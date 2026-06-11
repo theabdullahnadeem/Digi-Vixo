@@ -102,7 +102,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             {[
               { label: 'Mission', headline: 'Build systems that recover revenue.', body: 'We deploy AI and software infrastructure that converts missed opportunities into measurable outcomes. Not theory. Results you can see in a dashboard.' },
-              { label: 'Vision', headline: 'Every call answered. Every opportunity captured.', body: 'A world where no accounting firm loses a client to an unanswered phone — where AI works quietly in the background so professionals can focus on what they do best.' },
+              { label: 'Vision', headline: 'Every call answered. Every opportunity captured.', body: 'A world where no business loses a client to an unanswered phone — where voice AI operates seamlessly in the background so teams can focus on growth.' },
             ].map((card, i) => (
               <div key={i} style={{ border: '1px solid var(--void-border)', padding: '48px 40px', background: 'var(--void-3)', position: 'relative', overflow: 'hidden' }}>
                 <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'var(--gold)', opacity: 0.4 }} />

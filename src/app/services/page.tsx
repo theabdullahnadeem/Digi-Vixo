@@ -10,7 +10,7 @@ const coreServices = [
     label: 'Flagship Service',
     title: 'AI Calling Agent',
     subtitle: 'Missed call recovery, 24/7 coverage',
-    body: 'We engineer, deploy, and manage bespoke voice AI calling agents integrated directly into your existing firm lines. Built with state-of-the-art Large Language Models (LLMs) trained specifically on accounting terminology and CPA tax cycles, our calling agents run at an industry-leading latency of under 800ms. They instantly answer, resolve standard queries, qualify leads, and schedule appointments directly on your calendar, handing off to humans only for high-value client issues. Reduce missed inbound opportunities from 32% to under 5%. Live in 48 hours.',
+    body: 'We engineer, deploy, and manage bespoke voice AI calling agents integrated directly into your existing business lines. Built with state-of-the-art Large Language Models (LLMs) custom-trained on your specific industry terminology and workflow cycles, our calling agents run at an industry-leading latency of under 800ms. They instantly answer, resolve standard queries, qualify leads, and schedule appointments directly on your calendar, handing off to humans only for high-value issues. Reduce missed inbound opportunities from 32% to under 5%. Live in 48 hours.',
     highlight: true,
     features: ['24/7 client response', 'Sub-800ms voice latency', 'Calendly/Cal.com sync', 'Automatic CRM data log', 'Custom tone of voice'],
     type: 'calling'

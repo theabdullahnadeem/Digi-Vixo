@@ -185,7 +185,7 @@ export default function SocialProof() {
             letterSpacing: '0.05em',
           }}
         >
-          Based on anonymised data from CPA firm clients in US & UK · 60-day averages
+          Based on anonymised data from business and professional service clients in US & UK · 60-day averages
         </p>
       </div>
     </section>

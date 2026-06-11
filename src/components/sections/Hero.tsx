@@ -137,7 +137,7 @@ export default function Hero({ ready }: { ready: boolean }) {
                 color: 'var(--cream-muted)',
               }}
             >
-              AI Calling Infrastructure for Accounting Firms
+              Custom Software & AI Answering Infrastructure
             </span>
           </div>
 
