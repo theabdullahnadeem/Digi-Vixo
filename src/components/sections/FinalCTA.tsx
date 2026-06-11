@@ -43,7 +43,7 @@ export default function FinalCTA() {
       {/* Background */}
       <div className="cta-bg-img" style={{ position: 'absolute', inset: '-20%', zIndex: 0 }}>
         <Image
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=80"
+          src="/images/sections/final_cta.png"
           alt=""
           fill
           style={{ objectFit: 'cover', objectPosition: 'center', opacity: 0.15 }}

@@ -27,13 +27,13 @@ const founders = [
     name: 'Abdullah',
     title: 'CEO & Co-Founder',
     bio: 'A strategic architect of technical ecosystems. Abdullah leads product vision, client strategy, and growth — translating complex business problems into precise solutions that deliver measurable outcomes.',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80',
+    image: '/images/team/abdullah.png',
   },
   {
     name: 'Hassan',
     title: 'COO & Co-Founder',
     bio: 'The technical backbone of Digivixo. Hassan engineers seamless digital architectures, leads delivery and operations, and brings a relentless focus on quality to every engagement.',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&q=80',
+    image: '/images/team/hassan.png',
   },
 ]
 
@@ -78,7 +78,7 @@ export default function AboutPage() {
       {/* Hero */}
       <section style={{ position: 'relative', minHeight: '80vh', display: 'flex', alignItems: 'flex-end', overflow: 'hidden', paddingTop: 'var(--nav-height)' }}>
         <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-          <Image src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1600&q=80" alt="" fill style={{ objectFit: 'cover', opacity: 0.25 }} sizes="100vw" />
+          <Image src="/images/about/hero_bg.png" alt="" fill style={{ objectFit: 'cover', opacity: 0.25 }} sizes="100vw" />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(8,8,8,1) 0%, rgba(8,8,8,0.5) 60%, rgba(8,8,8,0.2) 100%)' }} />
         </div>
         <div className="container" style={{ position: 'relative', zIndex: 1, paddingBottom: '80px' }}>

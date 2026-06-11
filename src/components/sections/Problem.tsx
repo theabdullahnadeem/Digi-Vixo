@@ -161,8 +161,8 @@ export default function Problem() {
               }}
             >
               <Image
-                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80"
-                alt="Professional on phone"
+                src="/images/sections/problem_bg.png"
+                alt="Missed call telephone"
                 fill
                 style={{ objectFit: 'cover', objectPosition: 'center top', filter: 'grayscale(30%) brightness(0.6)' }}
                 sizes="(max-width: 900px) 0px, 50vw"

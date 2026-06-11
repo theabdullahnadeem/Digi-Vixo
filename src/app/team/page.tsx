@@ -10,14 +10,14 @@ const team = [
     name: 'Abdullah',
     title: 'CEO & Co-Founder',
     bio: 'A strategic architect of technical ecosystems and high-performance software. Abdullah leads product vision, client strategy, and growth at Digivixo. He translates complex business problems into precise technical solutions that deliver measurable outcomes.',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80',
+    image: '/images/team/abdullah.png',
     focus: ['Product Vision', 'Client Strategy', 'Technical Architecture', 'Business Development'],
   },
   {
     name: 'Hassan',
     title: 'COO & Co-Founder',
     bio: 'The technical backbone of Digivixo. Hassan engineers seamless digital architectures and leads delivery, operations, and infrastructure. His approach is methodical, thorough, and relentlessly focused on quality.',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&q=80',
+    image: '/images/team/hassan.png',
     focus: ['Engineering Leadership', 'Delivery Operations', 'System Architecture', 'Quality Standards'],
   },
 ]
@@ -45,7 +45,7 @@ export default function TeamPage() {
       {/* Hero */}
       <section style={{ position: 'relative', minHeight: '70vh', display: 'flex', alignItems: 'flex-end', overflow: 'hidden', paddingTop: 'var(--nav-height)' }}>
         <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-          <Image src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1600&q=80" alt="" fill style={{ objectFit: 'cover', opacity: 0.2 }} sizes="100vw" />
+          <Image src="/images/team/hero_bg.png" alt="" fill style={{ objectFit: 'cover', opacity: 0.2 }} sizes="100vw" />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(8,8,8,1) 0%, rgba(8,8,8,0.6) 60%, rgba(8,8,8,0.2) 100%)' }} />
         </div>
         <div className="container" style={{ position: 'relative', zIndex: 1, paddingBottom: '80px' }}>

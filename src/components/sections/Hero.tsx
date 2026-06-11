@@ -60,7 +60,7 @@ export default function Hero({ ready }: { ready: boolean }) {
       {/* Background image */}
       <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
         <Image
-          src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80"
+          src="/images/sections/hero_bg.png"
           alt=""
           fill
           priority

@@ -128,8 +128,8 @@ export default function Solution() {
             {/* Background image */}
             <div style={{ position: 'relative', aspectRatio: '4/3', overflow: 'hidden', border: '1px solid var(--void-border)' }}>
               <Image
-                src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80"
-                alt="AI technology"
+                src="/images/sections/solution_bg.png"
+                alt="AI Calling Agent wave visualization"
                 fill
                 style={{ objectFit: 'cover', objectPosition: 'center', filter: 'grayscale(20%) brightness(0.4)' }}
                 sizes="(max-width: 900px) 0px, 50vw"
