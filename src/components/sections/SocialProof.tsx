@@ -174,6 +174,63 @@ export default function SocialProof() {
           ))}
         </div>
 
+        {/* Testimonial Pull Quote */}
+        <div
+          style={{
+            maxWidth: '800px',
+            margin: '64px auto 32px',
+            textAlign: 'center',
+            position: 'relative',
+            padding: '0 20px',
+          }}
+        >
+          <span
+            style={{
+              fontFamily: 'var(--font-cormorant), serif',
+              fontSize: '96px',
+              lineHeight: 1,
+              color: 'rgba(201,168,76,0.15)',
+              position: 'absolute',
+              top: '-48px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              userSelect: 'none',
+              pointerEvents: 'none',
+            }}
+          >
+            “
+          </span>
+          
+          <p
+            style={{
+              fontFamily: 'var(--font-cormorant), serif',
+              fontSize: 'clamp(20px, 3vw, 26px)',
+              fontWeight: 400,
+              fontStyle: 'italic',
+              color: 'var(--cream)',
+              lineHeight: 1.55,
+              position: 'relative',
+              zIndex: 1,
+              marginBottom: '24px',
+            }}
+          >
+            "The AI agent handled 90% of scheduling queries without a single human touch. The volume of tax consultations booked increased by 40% year-over-year, saving senior staff hours of administrative work."
+          </p>
+          
+          <p
+            style={{
+              fontFamily: 'var(--font-dm-sans), sans-serif',
+              fontSize: '11px',
+              fontWeight: 600,
+              color: 'var(--gold)',
+              letterSpacing: '0.15em',
+              textTransform: 'uppercase',
+            }}
+          >
+            — Managing Partner · CPA Firm · Texas
+          </p>
+        </div>
+
         {/* Attribution */}
         <p
           style={{
@@ -185,7 +242,7 @@ export default function SocialProof() {
             letterSpacing: '0.05em',
           }}
         >
-          Based on anonymised data from business and professional service clients in US & UK · 60-day averages
+          Based on verified results from accounting firm client · 60-day average
         </p>
       </div>
     </section>

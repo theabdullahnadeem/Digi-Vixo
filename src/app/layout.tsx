@@ -15,22 +15,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${cormorant.variable} ${dmSans.variable}`}>
       <head>
-        <title>Digivixo — Custom Software & AI Answering Infrastructure</title>
+        <title>Digivixo — AI Calling Infrastructure for CPA & Professional Services</title>
         <meta
           name="description"
-          content="We reduce missed calls from 32% to 5% and increase revenue by 13% for modern businesses and professional services. Fully managed AI receptionist and voice calling infrastructure."
+          content="We reduce missed calls from 32% to 5% and increase revenue by 13% for CPA firms and professional services. Fully managed AI receptionist."
         />
         <meta
           name="keywords"
-          content="AI calling agent, custom software, business voice AI, SaaS engineering, AI receptionist, client portals"
+          content="AI calling agent, business voice AI, AI receptionist, CPA firms, accounting firm AI, missed call recovery"
         />
-        <meta property="og:title" content="Digivixo — Custom Software & AI Answering Infrastructure" />
-        <meta property="og:description" content="Answering every call. Engineering custom software." />
+        <meta property="og:title" content="Digivixo — AI Calling Infrastructure for CPA & Professional Services" />
+        <meta property="og:description" content="We reduce missed calls from 32% to 5% and increase revenue by 13% for CPA firms and professional services. Fully managed AI receptionist." />
         <meta property="og:url" content="https://digivixo.com" />
         <meta property="og:site_name" content="Digivixo" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Digivixo — Custom Software & AI Answering" />
+        <meta name="twitter:title" content="Digivixo — AI Calling Infrastructure for CPA & Professional Services" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
       <body>

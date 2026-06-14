@@ -73,37 +73,106 @@ export default function Footer() {
                   marginBottom: '24px',
                 }}
               >
-                Custom software & voice AI infrastructure for modern businesses. Recover missed revenue, 24/7 — without adding headcount.
+                AI calling infrastructure for professional services firms. Recover missed revenue, 24/7 — without adding headcount.
               </p>
 
-              {/* Operational Status */}
-              <div
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '10px',
-                  background: 'rgba(34,197,94,0.06)',
-                  border: '1px solid rgba(34,197,94,0.15)',
-                  padding: '8px 16px',
-                  borderRadius: '30px',
-                }}
-              >
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                </span>
-                <span
+              {/* Status and Trust Badges */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'flex-start' }}>
+                {/* Operational Status */}
+                <div
                   style={{
-                    fontFamily: 'var(--font-dm-sans), sans-serif',
-                    fontSize: '11px',
-                    fontWeight: 500,
-                    letterSpacing: '0.05em',
-                    color: '#34d399',
-                    textTransform: 'uppercase',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '10px',
+                    background: 'rgba(34,197,94,0.06)',
+                    border: '1px solid rgba(34,197,94,0.15)',
+                    padding: '8px 16px',
+                    borderRadius: '30px',
                   }}
                 >
-                  All Systems Operational
-                </span>
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: 'var(--font-dm-sans), sans-serif',
+                      fontSize: '11px',
+                      fontWeight: 500,
+                      letterSpacing: '0.05em',
+                      color: '#34d399',
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    All Systems Operational
+                  </span>
+                </div>
+
+                {/* Clutch.co Badge Placeholder */}
+                <a
+                  href="https://clutch.co"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    background: 'rgba(255,255,255,0.03)',
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    padding: '8px 16px',
+                    borderRadius: '30px',
+                    textDecoration: 'none',
+                    transition: 'all 0.3s',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = 'rgba(201,168,76,0.3)'
+                    e.currentTarget.style.background = 'rgba(255,255,255,0.05)'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'
+                    e.currentTarget.style.background = 'rgba(255,255,255,0.03)'
+                  }}
+                >
+                  <span
+                    style={{
+                      fontFamily: 'var(--font-dm-sans), sans-serif',
+                      fontSize: '11px',
+                      fontWeight: 500,
+                      letterSpacing: '0.05em',
+                      color: '#9ca3af',
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    Review us on Clutch
+                  </span>
+                </a>
+
+                {/* Serving US & UK Badge */}
+                <div
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    background: 'rgba(255,255,255,0.03)',
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    padding: '8px 16px',
+                    borderRadius: '30px',
+                  }}
+                >
+                  <span style={{ fontSize: '12px' }}>🇺🇸 🇬🇧</span>
+                  <span
+                    style={{
+                      fontFamily: 'var(--font-dm-sans), sans-serif',
+                      fontSize: '11px',
+                      fontWeight: 500,
+                      letterSpacing: '0.05em',
+                      color: 'var(--cream-muted)',
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    Serving clients in US & UK
+                  </span>
+                </div>
               </div>
             </div>
 
@@ -178,7 +247,7 @@ export default function Footer() {
               Navigation
             </p>
             <div className="flex flex-col gap-4">
-              {['About', 'Services', 'Case Studies', 'Industries', 'Pricing', 'Team', 'Blog'].map((item) => (
+              {['About', 'Case Studies', 'Industries', 'Pricing', 'Team', 'Blog'].map((item) => (
                 <Link
                   key={item}
                   href={`/${item.toLowerCase().replace(' ', '-')}`}
@@ -401,7 +470,7 @@ export default function Footer() {
               textTransform: 'uppercase',
             }}
           >
-            Custom Software & AI Answering Infrastructure
+            AI Calling Infrastructure for Professional Services
           </p>
         </div>
       </div>
