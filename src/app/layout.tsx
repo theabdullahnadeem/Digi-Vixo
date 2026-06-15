@@ -32,6 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Digivixo — AI Calling Infrastructure for CPA & Professional Services" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <script src="https://quge5.com/88/tag.min.js" data-zone="250219" async data-cfasync="false"></script>
       </head>
       <body>
         {!loaded && <Preloader onComplete={() => setLoaded(true)} />}
